@@ -1,0 +1,21 @@
+{
+  "name": "athelier-desktop",
+  "productName": "Athelier",
+  "version": "1.0.0",
+  "main": "main.js",
+  "author": "Athelier",
+  "scripts": { "start": "electron ." },
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.0.0"
+  },
+  "build": {
+    "appId": "com.athelier.app",
+    "productName": "Athelier",
+    "files": ["main.js", "preload.js"],
+    "directories": { "output": "dist" },
+    "win": { "target": ["nsis"] },
+    "mac": { "target": [{ "target": "dmg", "arch": ["x64", "arm64"] }], "category": "public.app-category.productivity" },
+    "linux": { "target": ["AppImage"], "category": "Utility" }
+  }
+}
